@@ -5,6 +5,7 @@ import com.challengeone.forumhub.repository.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +23,7 @@ public class TopicoService {
     }
 
     public Topico criar(Topico topico) {
+        topico.setDataCriacao(new Date());
         return this.repository.save(topico);
     }
 

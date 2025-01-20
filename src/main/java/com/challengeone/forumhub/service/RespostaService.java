@@ -5,6 +5,7 @@ import com.challengeone.forumhub.repository.RespostaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +23,7 @@ public class RespostaService {
     }
 
     public Resposta criar(Resposta resposta) {
+        resposta.setDataCriacao(new Date());
         return this.repository.save(resposta);
     }
 
